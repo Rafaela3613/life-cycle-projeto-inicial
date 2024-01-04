@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ListaDeCompraService } from './service/lista-de-compra.service';
 import { Item } from './interfaces/iItem';
+import { ListaDeCompraService } from './service/lista-de-compra.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-//código omitido
-
 export class AppComponent implements OnInit {
   title = 'app-lista-de-compras';
   listaDeCompra! : Array<Item>
@@ -16,6 +14,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.listaDeCompra = this.listaService.getListaDeCompra();
-    console.log(this.listaDeCompra);
+  }
+  editarItem(item: Item){
+    console.log(item);
   }
 }
